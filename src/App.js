@@ -21,12 +21,6 @@ const StylizedSlide = styled(StylizedDiv)`
     transition: 2s all;
 `;
 
-const StyledIframe = styled.iframe`
-    width: 100%;
-    height: 100%;
-    border: 0;
-`;
-
 class Slide extends Component {
 
     state = {
@@ -45,7 +39,7 @@ class Slide extends Component {
         }
 
         try {
-            let currentWebPage = await axios.get('https://cors-anywhere.herokuapp.com/' + this.props.link);
+            let currentWebPage = await axios.get(this.props.link);
             let previousWebPage = await localStorage.getItem(this.props.link);
 
             console.log('Comparing web pages');
