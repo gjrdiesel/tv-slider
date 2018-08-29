@@ -22,7 +22,7 @@ Instructions for Acrisoft Freedom v11
     ```html
     [[repeat]]
     <div id="root"></div>
-    <script src="https://gjrdiesel.github.io/tv-slider/static/js/main.9c4f1fa8.js"></script>
+    <script src="https://gjrdiesel.github.io/tv-slider/static/js/main.f9aaba47.js"></script>
     ```
     5) For "Repeat" enter:
     ```html
