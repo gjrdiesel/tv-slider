@@ -21,6 +21,10 @@ const StylizedSlide = styled(StylizedDiv)`
     transition: 2s all;
 `;
 
+function splitByHash(html) {
+    return html.split('<input type="hidden" name="hash" value=')[0];
+}
+
 class Slide extends Component {
 
     state = {
@@ -99,6 +103,20 @@ class App extends Component {
         this.slideTimeout = setTimeout(this.handleSlideTimeout, this.getTimeoutInSeconds(slides[id].timeout));
     };
 
+    checkIfSettingsChanged = async () => {
+        try {
+            let currentSettings = await localStorage.getItem('self_content');
+            let newSettings = await axios.get(window.location.href);
+
+            if (splitByHash(currentSettings) !== splitByHash(newSettings.data)) {
+                await localStorage.setItem('self_content', newSettings.data);
+                window.location.reload();
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
     componentDidMount() {
         let slides = [];
         document.querySelectorAll('.tv-slider-items').forEach(options => {
@@ -109,6 +127,8 @@ class App extends Component {
         slides[0].isActive = true;
         this.slideTimeout = setTimeout(this.handleSlideTimeout, this.getTimeoutInSeconds(slides[0].timeout));
         this.setState({slides});
+
+        setInterval(this.checkIfSettingsChanged, 10000);
     }
 
     render() {
