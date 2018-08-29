@@ -2,7 +2,7 @@
 
 Instructions for Acrisoft Freedom v11
 
-#Installation
+# Installation
 
 1) Add a custom module
     1) Go to Green -> Toolbar, click "Add Custom Module"
