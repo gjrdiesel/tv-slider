@@ -4,6 +4,11 @@
 
 Instructions for Acrisoft Freedom v11
 
+# Features:
+1) Built in caching -- only refreshes the page if the slider settings change or if the pages in the slider change
+2) Add, remove, re-order links or images plus other slider settings from the blue interface
+3) Set how long you want each slide to display in seconds in the blue interface
+
 # Installation
 
 1) Add a custom module
