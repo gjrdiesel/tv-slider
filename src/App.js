@@ -48,7 +48,7 @@ class Slide extends Component {
 
             console.log('Comparing web pages');
 
-            if (currentWebPage.data !== previousWebPage.data) {
+            if (currentWebPage.data !== previousWebPage) {
                 console.log('Updating web pages');
                 await localStorage.setItem(this.props.link, currentWebPage.data);
                 this.setState({html: currentWebPage.data});
@@ -56,7 +56,7 @@ class Slide extends Component {
                 console.log('NOT Updating web pages');
             }
         } catch (err) {
-
+            console.error(err);
         }
 
     };
