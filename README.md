@@ -1,5 +1,7 @@
 ## Add a tv slider custom module to Accrisoft Freedom
 
+<img src="https://github.com/gjrdiesel/tv-slider/raw/master/Example.png"/>
+
 Instructions for Acrisoft Freedom v11
 
 # Installation
